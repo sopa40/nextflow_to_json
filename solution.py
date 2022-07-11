@@ -87,7 +87,7 @@ def process_in_out(in_out_file):
 
 def main():
     process_in_out(input_output_file)
-    with open('C:/Users/hazik/Desktop/modules_uni/SS22/MP DS/output_local.json', 'w') as output:
+    with open('output_local.json', 'w') as output:
         json.dump(result_json, output, indent=2)
 
 main()
