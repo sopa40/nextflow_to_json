@@ -86,9 +86,11 @@ def process_in_out(in_out_file):
 
 
 def main():
+    print("Starting JSON generation...")
     process_in_out(input_output_file)
     with open('output_local.json', 'w') as output:
         json.dump(result_json, output, indent=2)
+    print("JSON is created!")
 
 main()
 
