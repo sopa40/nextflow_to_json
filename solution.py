@@ -36,13 +36,15 @@ NAME_SCRIPT = 1
 FILE_PATH = 1
 FILE_SIZE = 2
 
-with open('C:/Users/hazik/Desktop/modules_uni/SS22/MP DS/trace_local.txt') as trace:
+# Nextflow traces
+with open('trace_local.txt') as trace:
     trace_lns = trace.readlines()
     trace_lns = trace_lns[1:]
     # ignore first row, hash is key and rest of the string is dict for each row
     trace_dict = dict(line.split("\t", 2)[1:] for line in trace_lns)
 
-with open('C:/Users/hazik/Desktop/modules_uni/SS22/MP DS/script_local.txt') as script:
+# Script result file in the Nextflow directory after run
+with open('script_local.txt') as script:
     input_output_file = script.readlines()
 
 
@@ -81,13 +83,6 @@ def process_in_out(in_out_file):
                 task_info["outputFiles"].append(out_dct)
 
         result_json.append(task_info)
-
-        if task_info["id"] == "21/801f86":
-            print(task_info)
-
-    print()
-    print()
-    print(result_json[0])
 
 
 def main():
