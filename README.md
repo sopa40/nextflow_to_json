@@ -6,3 +6,4 @@
   1. Extract traces 
   2. Specify a path to trace files inside of solution.py file (or just leave them in the same folder with solution.py file)
   3. Simply run the script with {$python3 solution.py}
+  4. Results will be written to output_local.json (or you can specify path to the output file by yourself)
