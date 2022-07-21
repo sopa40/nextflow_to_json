@@ -30,6 +30,7 @@ from model import Task, Dependency
 
 TASK_NAME = 1
 N_INSTRUCTIONS = 7
+N_CYCLES = 8
 AVERAGE_CPU_USAGE = 9
 
 ID_SCRIPT = 0
@@ -67,7 +68,7 @@ def process_in_out(in_out_file):
         task = Task(
             hash_id,
             read_trace(hash_id, TASK_NAME),
-            int(read_trace(hash_id, N_INSTRUCTIONS)),
+            int(read_trace(hash_id, N_CYCLES)),
             10_000,
             cpu_usage,
             math.ceil(cpu_usage)

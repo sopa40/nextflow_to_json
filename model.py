@@ -23,17 +23,16 @@ class Dependency:
 
     def to_producer_json(self):
         json = {
-            "path": self.file_path + str(self.internal_producer_counter),
-            "size": list(self.file_sizes)[-1]
+            "path": self.file_path,
+            "size": list(self.file_sizes)[0]
         }
-        self.internal_producer_counter += 1
 
         return json
 
     def to_consumer_json(self):
         json = {
-            "path": self.file_path + str(self.internal_producer_counter),
-            "size": list(self.file_sizes)[self.internal_producer_counter]
+            "path": self.file_path,
+            "size": list(self.file_sizes)[0]
         }
 
         return [json]
